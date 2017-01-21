@@ -1,15 +1,15 @@
-Iran Vehicle Namaa Number Package
+CedarMap Package
 ===================
 
 ### Requirements:
-- php ~5.4.* 
+- php ~5.6.*
 
 Instalation:
 ==========
 First add package name to your composer requirements
 ```json
 "require": {
-    "namaa/namaa": "dev"
+    "cedar/cedar": "dev"
 }
 ```
 
@@ -21,7 +21,7 @@ Next, add your new provider to the providers array of config/app.php:
 ```php
 'providers' => [
     // ...
-    Namaa\NamaaServiceProvider::class,
+    Cedar\CedarServiceProvider::class,
     // ...
   ]
 ```
@@ -31,7 +31,7 @@ Next, add class alias to the aliases array of config/app.php:
 ```php
 'aliases' => [
    // ...
-      'Namaa' => Namaa\NamaaFacade::class
+      'Cedar' => Cedar\CedarFacade::class
     // ...
 ]
 ```
@@ -42,25 +42,10 @@ Finally, run:
 Ho to use:
 ====
 ```php
-  $namaa = new Namaa\Namaa();
-  $plak = 21 .
-      ' ب ' .
-      488 .
-      ' - ' .
-      88 .
-      ' ایران';
 
-  $r = $namaa->setNamaa($plak);
-  print_r($r->getparsedData()); exit;
-  print_r($namaa->isCab());
-```
+$geocode = (new Cedar\Cedar('v1'))
+    ->load('geocode')
+    ->setParamByKey('title', 'ونک');
 
-### Get namaa as image
-```php
-  $namaa->getImage('path/to/export/image.png');
-```
-
-### Add date to image
-```php
-  $namaa->withDate('95-05-01')->getImage('path/to/export/image.png');
+    dd($geocode->getJson())
 ```

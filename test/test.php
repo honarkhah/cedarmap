@@ -2,14 +2,10 @@
 require 'vendor/autoload.php';
 
 
-// $result = (new Namaa\Namaa('v1'))
-// 				->load('suggest')
-// 				->setParamByKey('query', 'تهران میدان هفت تیر');
 
-//
-//$geocode = (new Cedar\Cedar('v1'))
-//    ->load('geocode')
-//    ->setParamByKey('title', 'ونک');
+$geocode = (new Cedar\Cedar('v1'))
+    ->load('geocode')
+    ->setParamByKey('title', 'ونک');
 //
 //$reverse = (new Cedar\Cedar('v1'))
 //    ->load('reverse')
