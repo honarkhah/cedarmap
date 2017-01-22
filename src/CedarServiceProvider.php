@@ -3,7 +3,7 @@ namespace Cedar;
 
 use Illuminate\Support\ServiceProvider;
 
-class NamaaServiceProvider extends ServiceProvider
+class CedarServiceProvider extends ServiceProvider
 {
 
     /**

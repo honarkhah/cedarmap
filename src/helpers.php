@@ -1,45 +1,60 @@
 <?php
-	function dd(){
-         array_map(function($a){
+
+if (!function_exists('dd')) {
+    function dd()
+    {
+        array_map(function ($a) {
             print_r($a);
             echo PHP_EOL;
-         }, func_get_args());
+        }, func_get_args());
 
         die();
-	}
+    }
+}
+if (!function_exists('config')) {
+    function config()
+    {
+        $ret = require 'config.php';
+        return $ret;
+    }
+}
 
-	function config(){
-		$ret = require 'config.php';
-		return $ret;
-	}
+if (!function_exists('camel_case')) {
+    function camel_case($str)
+    {
+        $arr = explode('_', $str);
+        $arr = array_map('ucfirst', $arr);
+        return lcfirst(implode('', $arr));
+    }
+}
 
-	function camel_case($str){
-		$arr = explode('_', $str);
-		$arr = array_map('ucfirst', $arr);
-		return lcfirst(implode('', $arr));
-	}
-
-	function class_basename($class)
+if (!function_exists('class_basename')) {
+    function class_basename($class)
     {
         $class = is_object($class) ? get_class($class) : $class;
 
         return basename(str_replace('\\', '/', $class));
     }
+}
 
-    function array_dot($array, $prepend=''){
-    	$results = [];
+if (!function_exists('array_dot')) {
+    function array_dot($array, $prepend = '')
+    {
+        $results = [];
 
         foreach ($array as $key => $value) {
-            if (is_array($value) && ! empty($value)) {
-                $results = array_merge($results, array_dot($value, $prepend.$key.'.'));
+            if (is_array($value) && !empty($value)) {
+                $results = array_merge($results, array_dot($value, $prepend . $key . '.'));
             } else {
-                $results[$prepend.$key] = $value;
+                $results[$prepend . $key] = $value;
             }
         }
 
         return $results;
     }
+}
 
+if (!function_exists('array_get')) {
     function array_get($array, $key, $default = null)
     {
         if (!is_array($array)) {
@@ -64,7 +79,9 @@
 
         return $array;
     }
+}
 
+if (!function_exists('array_set')) {
     function array_set(&$array, $key, $value)
     {
         if (is_null($key)) {
@@ -79,7 +96,7 @@
             // If the key doesn't exist at this depth, we will just create an empty array
             // to hold the next value, allowing us to create the arrays to hold final
             // values at the correct depth. Then we'll keep digging into the array.
-            if (! isset($array[$key]) || ! is_array($array[$key])) {
+            if (!isset($array[$key]) || !is_array($array[$key])) {
                 $array[$key] = [];
             }
 
@@ -90,3 +107,4 @@
 
         return $array;
     }
+}

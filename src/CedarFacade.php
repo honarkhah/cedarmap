@@ -3,7 +3,7 @@ namespace Cedar;
 
 use Illuminate\Support\Facades\Facade;
 
-class NamaaFacade extends Facade
+class CedarFacade extends Facade
 {
     /**
      * Get the registered name of the component.
