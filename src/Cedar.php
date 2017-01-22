@@ -10,11 +10,17 @@ class Cedar{
 
 	public function __construct($version = 'default'){
 		$this->config = config('cedar');
+		$this->setVersion($version);
+	}
+
+	public function setVersion($version){
 		if (empty($this->config['versions'][$version])) {
 			throw new InvalidVersion("Version {$version} Not Supported!");
 		}
 
 		$this->version = $version;
+
+		return $this;
 	}
 
 	public function load($service){
