@@ -9,7 +9,7 @@ Instalation:
 First add package name to your composer requirements
 ```json
 "require": {
-    "cedar/cedar": "dev"
+    "mammutgroup/cedarmap": "dev"
 }
 ```
 
