@@ -4,24 +4,14 @@ return
   'versions' => [
     // default services
     'default' => [
-      'url' => 'http://map.namaa.ir',
+      'url' => 'http://api.cedarmaps.com',
       
       'headers' => [
         'Accept' => 'application/json, text/plain, */*',
-        'Accept-Encoding' => 'gzip, deflate, sdch',
-        'Accept-Language' => 'en-US,en;q=0.8',
+        'Accept-Encoding' => 'gzip, deflate'
       ],
 
       'services'=>[
-        'hash'=>[
-          'url' => 'hash/',
-          'type' => 'GET',
-          'headers' => [
-            'Accept' => 'image/webp,image/*,*/*;q=0.8'
-          ],
-          'params' => [],
-          'ssl' => false,
-        ]
       ]
     ],
 
@@ -30,8 +20,8 @@ return
       'url' => 'http://api.cedarmaps.com',
       
       'headers' => [
-        //'Accept' => 'application/json, text/plain, */*',
-        //'Accept-Encoding' => 'gzip, deflate, sdch',
+        'Accept' => 'application/json, text/plain, */*',
+        'Accept-Encoding' => 'gzip, deflate',
         'Authorization' => 'Bearer aa28ccc5cea0afff90228ff86a831dbd7573bf44',
         //'Accept-Language' => 'en-US,en;q=0.8',
       ],
