@@ -1,6 +1,7 @@
 <?php
 return
 [
+  'timeout' => 300, //miliseconds
   'versions' => [
     // default services
     'default' => [
