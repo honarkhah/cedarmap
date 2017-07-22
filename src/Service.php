@@ -190,7 +190,8 @@ class Service
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch,CURLOPT_ENCODING , "gzip");
-        curl_setopt($ch, CURLOPT_TIMEOUT_MS, config('cedar.timeout', 300));
+        curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT_MS, config('cedar.timeout', 200));
         
         $output = curl_exec($ch);
 
